@@ -107,8 +107,10 @@ jobs:
         run: |
           export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/lib/x86_64-linux-gnu/pkgconfig/
           echo $PKG_CONFIG_PATH
-          find / -name openssl.pc
-          cat /usr/lib/x86_64-linux-gnu/pkgconfig/
+          find /usr/lib -name openssl.pc
+          cat /usr/lib/x86_64-linux-gnu/pkgconfig/openssl.pc
+          dpkg -l | grep openssl
+
           #/usr/lib/x86_64-linux-gnu/pkgconfig/openssl.pc
 
       - name: cargo build
