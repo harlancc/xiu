@@ -326,7 +326,9 @@ Use the above methods to push live stream to service 1, when you play the stream
 ## Others
 
 Open issues if you have any problems. Star and pull requests are welcomed. Your stars can make this project go faster and further.
- 
+
+## [0.1.0] - 2024-02-25
+  - first version 
 
 ## v0.5.0
 - Support rtmp gop number configuration.
