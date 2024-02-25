@@ -100,7 +100,7 @@ jobs:
       - name: Setup Rust toolchain
         uses: dtolnay/rust-toolchain@stable
 
-      - run: sudo apt install musl-tools libssl-dev
+      - run: sudo apt install musl-tools pkg-config libssl-dev
         if: startsWith(matrix.os, 'ubuntu')
 
       - name: cargo build
