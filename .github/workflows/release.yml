@@ -100,14 +100,15 @@ jobs:
       - name: Setup Rust toolchain
         uses: dtolnay/rust-toolchain@stable
 
-      - run: sudo apt install musl-tools pkg-config libssl-dev
+      - run: sudo apt install musl-tools pkg-config libssl-dev linux-musl-dev
         if: startsWith(matrix.os, 'ubuntu')
       
       - name: Set up project
         run: |
           export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/lib/x86_64-linux-gnu/pkgconfig/
           echo $PKG_CONFIG_PATH
-          #find / -name openssl.pc
+          find / -name openssl.pc
+          cat /usr/lib/x86_64-linux-gnu/pkgconfig/
           #/usr/lib/x86_64-linux-gnu/pkgconfig/openssl.pc
 
       - name: cargo build
