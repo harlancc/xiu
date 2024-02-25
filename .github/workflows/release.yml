@@ -102,6 +102,11 @@ jobs:
 
       - run: sudo apt install musl-tools pkg-config libssl-dev
         if: startsWith(matrix.os, 'ubuntu')
+      
+      - name: Set up project
+        run: |
+          export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/lib/${{ matrix.target }}/pkgconfig
+          echo $PKG_CONFIG_PATH
 
       - name: cargo build
         uses: houseabsolute/actions-rust-cross@v0
