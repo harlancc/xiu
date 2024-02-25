@@ -48,10 +48,10 @@ jobs:
             target: x86_64-unknown-linux-gnu
             compress: true
             cargo_flags: ""
-          - os: ubuntu-latest
-            target: aarch64-unknown-linux-musl
-            compress: true
-            cargo_flags: ""
+          #- os: ubuntu-latest
+          #  target: aarch64-unknown-linux-musl
+          #  compress: true
+          #  cargo_flags: ""
           #- os: ubuntu-latest
           #  target: aarch64-unknown-linux-gnu
           #  compress: true
@@ -60,10 +60,10 @@ jobs:
             target: armv7-unknown-linux-musleabihf
             compress: true
             cargo_flags: ""
-          - os: ubuntu-latest
-            target: armv7-unknown-linux-gnueabihf
-            compress: true
-            cargo_flags: ""
+          #- os: ubuntu-latest
+          #  target: armv7-unknown-linux-gnueabihf
+          #  compress: true
+          #  cargo_flags: ""
           - os: ubuntu-latest
             target: arm-unknown-linux-musleabihf
             compress: true
@@ -197,17 +197,17 @@ jobs:
           name: x86_64-unknown-linux-gnu
           path: target/x86_64-unknown-linux-gnu/release
 
-      - name: Download artifact armv7-unknown-linux-gnueabihf
-        uses: actions/download-artifact@v3
-        with:
-          name: armv7-unknown-linux-gnueabihf
-          path: target/armv7-unknown-linux-gnueabihf/release
+      #- name: Download artifact armv7-unknown-linux-gnueabihf
+      #  uses: actions/download-artifact@v3
+      #  with:
+      #    name: armv7-unknown-linux-gnueabihf
+      #    path: target/armv7-unknown-linux-gnueabihf/release
 
-      - name: Download artifact aarch64-unknown-linux-musl
-        uses: actions/download-artifact@v3
-        with:
-          name: aarch64-unknown-linux-musl
-          path: target/aarch64-unknown-linux-musl/release
+      #- name: Download artifact aarch64-unknown-linux-musl
+      #  uses: actions/download-artifact@v3
+      #  with:
+      #    name: aarch64-unknown-linux-musl
+      #    path: target/aarch64-unknown-linux-musl/release
 
       #- name: Download artifact x86_64-unknown-linux-musl
       #  uses: actions/download-artifact@v3
@@ -230,8 +230,8 @@ jobs:
       - name: podman build linux/amd64
         run: podman build --format docker --platform linux/amd64 --manifest xiu -f Containerfile target/x86_64-unknown-linux-gnu/release
 
-      - name: podman build linux/arm
-        run: podman build --format docker --platform linux/arm/v7 --manifest xiu -f Containerfile target/armv7-unknown-linux-gnueabihf/release
+      #- name: podman build linux/arm
+      #  run: podman build --format docker --platform linux/arm/v7 --manifest xiu -f Containerfile target/armv7-unknown-linux-gnueabihf/release
 
       - name: podman manifest push latest
         run: podman manifest push xiu docker.io/harlancn/xiu:latest
