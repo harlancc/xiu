@@ -35,7 +35,7 @@ Change the listening port type.
 - Receive and process sub event result.
 ## 0.5.0
 - Support auth.
-## 0.5.1
+## [0.5.1] - 2024-02-25
 - Fix RTMP build error.
 
 

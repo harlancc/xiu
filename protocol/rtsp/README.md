@@ -7,6 +7,6 @@ A rtsp library.
 ## v0.1.3
 - Remove no used "\n" for error message.
 - Receive and process sub event result.
-## 0.2.0
+## [0.2.0] - 2024-02-25
 - Support auth.
 

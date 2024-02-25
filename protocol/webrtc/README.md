@@ -6,7 +6,7 @@ A webrtc library.
 - Remove no used "\n" for error message.
 - Receive and process sub event result.
 - Support remux from WHIP to RTMP.
-## 0.3.0
+## [0.3.0] - 2024-02-25
 - Support auth.
 
 

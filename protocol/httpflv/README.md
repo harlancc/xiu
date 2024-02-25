@@ -25,6 +25,6 @@ A httpflv library.
 - Receive and process sub event result.
 ## 0.4.0
 - Support auth.
-## 0.4.1
+## [0.4.1] - 2024-02-25
 - Fix RTMP build error.
 

@@ -4,5 +4,5 @@ A logger  library.
 - The first version.
 ## v0.1.1
 - Refactor codes;
-## v0.1.2
+## [0.1.2] - 2024-02-25
 - Remove build warnings.

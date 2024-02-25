@@ -173,7 +173,7 @@ async fn main() -> Result<()> {
 - Support remuxing from WHIP to rtmp.
 ## 0.6.0
 - Support auth.
-## 0.6.1
+## [0.6.1] - 2024-02-25
 - Fix RTMP build error.
 
 
