@@ -1,7 +1,7 @@
 [package]
 name = "xiu"
 description = "A powerful live server by Rust ."
-version = "0.1.21"
+version = "0.1.22"
 authors = ["HarlanC <wawacry@qq.com"]
 repository = "https://github.com/harlanc/xiu"
 license = "MIT"
@@ -44,3 +44,8 @@ version = "1.26.0"
 default-features = false
 #features = ["rt-core", "rt-threaded", "macros", "time","sync"]
 features = ["full"]
+
+
+[target.arm-unknown-linux-musleabihf.dependencies]
+openssl = { version = "0.10.60", features = ["vendored"] }
+openssl-sys = { version = "0.9.96", features = ["vendored"] }
