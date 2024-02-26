@@ -283,6 +283,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1505bd5d3d116872e7271a6d4e16d81d0c8570876c8de68093a09ac269d8aac0"
 
 [[package]]
+name = "audiopus"
+version = "0.3.0-rc.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ab55eb0e56d7c6de3d59f544e5db122d7725ec33be6a276ee8241f3be6473955"
+dependencies = [
+ "audiopus_sys",
+]
+
+[[package]]
 name = "audiopus_sys"
 version = "0.2.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2028,16 +2037,6 @@ dependencies = [
  "openssl-src",
  "pkg-config",
  "vcpkg",
-]
-
-[[package]]
-name = "opus"
-version = "0.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6526409b274a7e98e55ff59d96aafd38e6cd34d46b7dbbc32ce126dffcd75e8e"
-dependencies = [
- "audiopus_sys",
- "libc",
 ]
 
 [[package]]
@@ -3956,6 +3955,7 @@ name = "xwebrtc"
 version = "0.1.0"
 dependencies = [
  "async-trait",
+ "audiopus",
  "byteorder",
  "bytes",
  "bytesio 0.3.1",
@@ -3965,7 +3965,6 @@ dependencies = [
  "http 0.2.11",
  "indexmap 1.9.3",
  "log",
- "opus",
  "streamhub 0.1.1",
  "tokio",
  "webrtc",
