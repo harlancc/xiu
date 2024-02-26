@@ -60,14 +60,14 @@ jobs:
           #  target: armv7-unknown-linux-musleabihf
           #  compress: true
           #  cargo_flags: ""
-          #- os: ubuntu-latest
-          #  target: armv7-unknown-linux-gnueabihf
-          #  compress: true
-          #  cargo_flags: ""
           - os: ubuntu-latest
-            target: arm-unknown-linux-musleabihf
+            target: armv7-unknown-linux-gnueabihf
             compress: true
             cargo_flags: ""
+          #- os: ubuntu-latest
+          #  target: arm-unknown-linux-musleabihf
+          #  compress: true
+          #  cargo_flags: ""
           #- os: ubuntu-latest
           #  target: riscv64gc-unknown-linux-gnu
           #  compress: false
