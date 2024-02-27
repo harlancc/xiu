@@ -159,9 +159,10 @@ jobs:
         run: |
           echo ${GITHUB_WORKSPACE} 
           ls -lrth 
-          cp -rf "./application/xiu/src/config" "target/${{ matrix.target }}/release/"
+          cp -rf "./application/xiu/src/config/*.toml" "target/${{ matrix.target }}/release/"
           cp -f "./protocol/webrtc/src/clients/index.html" "target/${{ matrix.target }}/release/"
           cp -f "./protocol/webrtc/src/clients/whep.js" "target/${{ matrix.target }}/release/"
+          cp -f "./start.sh" "target/${{ matrix.target }}/release/"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
@@ -172,6 +173,7 @@ jobs:
             target/${{ matrix.target }}/release/config
             target/${{ matrix.target }}/release/index.html
             target/${{ matrix.target }}/release/whep.js
+            target/${{ matrix.target }}/release/start.sh
 
       - name: Get version from tag
         id: extract_version
