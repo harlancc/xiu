@@ -254,14 +254,14 @@ jobs:
       - name: podman login
         run: podman login --username ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_TOKEN }} docker.io
 
-      #- name: podman build linux/arm64
-      #  run: ls -lrth target/aarch64-unknown-linux-gnu/release/ && podman build --format docker --platform linux/arm64/v8 --manifest xiu -f Containerfile target/aarch64-unknown-linux-gnu/release
+      - name: podman build linux/arm64
+        run: ls -lrth target/aarch64-unknown-linux-gnu/release/ && podman build --format docker --platform linux/arm64/v8 --manifest xiu -f Containerfile target/aarch64-unknown-linux-gnu/release
 
       - name: podman build linux/amd64
         run: podman build --format docker --platform linux/amd64 --manifest xiu -f Containerfile target/x86_64-unknown-linux-gnu/release
 
-      #- name: podman build linux/arm
-      #  run: podman build --format docker --platform linux/arm/v7 --manifest xiu -f Containerfile target/armv7-unknown-linux-gnueabihf/release
+      - name: podman build linux/arm
+        run: podman build --format docker --platform linux/arm/v7 --manifest xiu -f Containerfile target/armv7-unknown-linux-gnueabihf/release
 
       - name: podman manifest push latest
         run: podman manifest push xiu docker.io/harlancn/xiu:latest
