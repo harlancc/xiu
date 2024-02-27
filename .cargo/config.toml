@@ -7,3 +7,7 @@ rustflags = ["-C", "link-args=-std=c99 -lm"]
 [target.armv7-unknown-linux-musleabihf]
 rustflags = ["-C", "link-args=-lm"]
 
+[target.arm-unknown-linux-musleabihf]
+rustflags = ["-C", "link-args=-lm"]
+
+
